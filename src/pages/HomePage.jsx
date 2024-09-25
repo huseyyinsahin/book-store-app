@@ -6,7 +6,7 @@ import Loading from "../components/Loading";
 
 const HomePage = () => {
   const [books, setBooks] = useState([]);
-  const [search, setSearch] = useState("labirent");
+  const [search, setSearch] = useState("html");
   const [loading, setLoading] = useState(false);
 
   const url = `https://www.googleapis.com/books/v1/volumes?q=${search}&orderBy=relevance&maxResults=18&printType=books&key=AIzaSyBCdjybTxD-LPf_ylEcke77ODhj6OUz0us`;

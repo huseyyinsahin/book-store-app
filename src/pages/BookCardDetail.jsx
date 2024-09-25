@@ -1,8 +1,10 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import image from "../assets/image/image.jpg";
 import { useBasketContext } from "../context/BasketProvider";
+import { AuthContext } from "../context/AuthProvider";
+import { useAlertContext } from "../context/AlertProvider";
 
 function BookCardDetail() {
   const navigate = useNavigate();
@@ -10,6 +12,8 @@ function BookCardDetail() {
   const [book, setBook] = useState({});
 
   const { addBasket } = useBasketContext();
+  const { showToast } = useAlertContext();
+  const { user } = useContext(AuthContext);
 
   const getBook = async () => {
     try {
@@ -24,6 +28,17 @@ function BookCardDetail() {
   useEffect(() => {
     getBook();
   }, []);
+
+  const handleClick = (book) => {
+    if (user) {
+      addBasket(book);
+    } else {
+      showToast(
+        "Sepetinize ürün ekleyebilmek için lütfen giriş yapınız!",
+        "warning"
+      );
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -69,7 +84,7 @@ function BookCardDetail() {
                 </div>
                 {book.saleInfo?.listPrice?.amount && (
                   <button
-                    onClick={() => addBasket(book)}
+                    onClick={() => handleClick(book)}
                     className="mt-6 lg:mt-0 px-6 py-2 bg-yellow-500 text-white font-bold rounded-lg shadow-lg hover:bg-yellow-600 transition-colors"
                   >
                     Sepete Ekle
