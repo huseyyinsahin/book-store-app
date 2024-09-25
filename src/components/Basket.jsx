@@ -54,20 +54,20 @@ function Basket() {
           </p>
 
           <ul className="space-y-4 overflow-y-auto flex-grow">
-            {basket[0] ? (
-              user ? (
+            {user ? (
+              basket[0] ? (
                 <>
                   {basket.map((book) => (
                     <BasketCard key={book.id} book={book} />
                   ))}
                 </>
               ) : (
-                <li className="text-center text-gray-700">
-                  Sepeti Kullanabilmek İçin Lütfen Giriş Yapınız!
-                </li>
+                <li className="text-center text-gray-700">Sepetiniz boş 😔</li>
               )
             ) : (
-              <li className="text-center text-gray-700">Sepetiniz boş 😔</li>
+              <li className="text-center text-gray-700">
+                Sepeti Kullanabilmek İçin Lütfen Giriş Yapınız!
+              </li>
             )}
           </ul>
 
