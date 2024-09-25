@@ -11,7 +11,7 @@ export default () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
 
-  const { login } = useContext(AuthContext);
+  const { login, googleLogin } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -69,6 +69,7 @@ export default () => {
           </button>
         </form>
         <button
+          onClick={googleLogin}
           type="button"
           className="w-full flex items-center justify-center gap-x-3 py-2.5 border rounded-lg text-sm font-medium hover:bg-gray-50 duration-150 active:bg-gray-100"
         >
