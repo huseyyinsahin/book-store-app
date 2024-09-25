@@ -22,4 +22,4 @@ Kullanıcıların kitapları arayabildiği, görüntüleyebildiği, sepete ekley
 
 ## Live
 
-[Live Link]()
+[Live Link](https://book-store-app-taupe-chi.vercel.app/)
