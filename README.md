@@ -20,6 +20,7 @@ Kullanıcıların kitapları arayabildiği, görüntüleyebildiği, sepete ekley
 - **Context API:** Uygulama genelinde durum yönetimi için.
 - **React Icons**: İconlar için.
 - **Firebase**: Google ile giriş yapılabilmesi için.
+- **Debounce**: Kullanıcı arama yaparken sunucuya birden çok gereksiz istek atılmaması için.
 
 ## Live
 
