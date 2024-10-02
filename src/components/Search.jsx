@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { BookContext } from "../context/BookProvider";
 
-function Search({ setSearch }) {
+function Search() {
+  const { setSearch } = useContext(BookContext);
+
   return (
     <div className="flex justify-center mt-8">
       <div className="relative w-full max-w-md">

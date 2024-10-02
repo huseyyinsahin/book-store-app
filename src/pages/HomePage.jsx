@@ -1,30 +1,11 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import Search from "../components/Search";
 import BookCard from "../components/BookCard";
 import Loading from "../components/Loading";
+import { BookContext } from "../context/BookProvider";
 
 const HomePage = () => {
-  const [books, setBooks] = useState([]);
-  const [search, setSearch] = useState("html");
-  const [loading, setLoading] = useState(false);
-
-  const url = `https://www.googleapis.com/books/v1/volumes?q=${search}&orderBy=relevance&maxResults=18&printType=books&key=AIzaSyBCdjybTxD-LPf_ylEcke77ODhj6OUz0us`;
-
-  const getBooks = async () => {
-    setLoading(true);
-    try {
-      const response = await axios.get(url);
-      setBooks(response.data.items);
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    getBooks();
-  }, [search]);
+  const { books, loading } = useContext(BookContext);
 
   return (
     <section className="mt-12 mx-auto px-4 max-w-screen-xl md:px-8">
@@ -34,7 +15,7 @@ const HomePage = () => {
           Okuyan biri ölmeden önce binlerce hayat yaşayabilir... Okumayan biri
           tek bir hayat yaşar.
         </p>
-        <Search setSearch={setSearch} />
+        <Search />
       </div>
       {loading ? (
         <Loading />
