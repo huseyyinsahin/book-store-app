@@ -6,8 +6,8 @@ import { useAlertContext } from "../context/AlertProvider";
 
 export default () => {
   const { showToast } = useAlertContext();
-
   const navigate = useNavigate();
+  
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
 

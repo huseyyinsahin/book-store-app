@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 function NotFound() {
   const navigate = useNavigate();
+  
   return (
     <main>
       <div className="max-w-screen-xl mx-auto px-4 flex items-center justify-start h-screen md:px-8">
