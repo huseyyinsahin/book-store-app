@@ -23,7 +23,7 @@ export default () => {
   };
 
   return (
-    <main className="w-full h-screen flex flex-col items-center justify-center px-4">
+    <main className="w-full h-[80vh] flex flex-col items-center justify-center px-4">
       <div className="max-w-sm w-full text-gray-600 space-y-5">
         <div className="text-center pb-8">
           <div className="md:ml-4 ml-2 text-black flex align-items-center justify-content-center">
